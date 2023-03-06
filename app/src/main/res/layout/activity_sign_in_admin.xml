@@ -38,7 +38,7 @@
         android:layout_width="164dp"
         android:layout_height="49dp"
         android:backgroundTint="@color/black"
-        android:text="Sign In"
+        android:text="Sign Up"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -47,6 +47,7 @@
         app:layout_constraintVertical_bias="0.916" />
 
     <EditText
+        android:id="@+id/adminLastName"
         android:layout_width="228dp"
         android:layout_height="46dp"
         android:hint="Last Name"
@@ -58,6 +59,7 @@
         app:layout_constraintVertical_bias="0.417" />
 
     <EditText
+        android:id="@+id/adminPassword"
         android:layout_width="228dp"
         android:layout_height="46dp"
         android:hint="Password"
@@ -69,6 +71,7 @@
         app:layout_constraintVertical_bias="0.824" />
 
     <EditText
+        android:id="@+id/adminAddress"
         android:layout_width="228dp"
         android:layout_height="46dp"
         android:hint="Address"
@@ -80,6 +83,7 @@
         app:layout_constraintVertical_bias="0.575" />
 
     <EditText
+        android:id="@+id/adminContactNum"
         android:layout_width="228dp"
         android:layout_height="46dp"
         android:hint="Mobile Number"
@@ -91,6 +95,7 @@
         app:layout_constraintVertical_bias="0.661" />
 
     <EditText
+        android:id="@+id/adminCategory"
         android:layout_width="130dp"
         android:layout_height="46dp"
         android:hint="Category"
@@ -102,6 +107,7 @@
         app:layout_constraintVertical_bias="0.494" />
 
     <EditText
+        android:id="@+id/adminEmail"
         android:layout_width="228dp"
         android:layout_height="46dp"
         android:hint="Email"
@@ -113,6 +119,7 @@
         app:layout_constraintVertical_bias="0.745" />
 
     <EditText
+        android:id="@+id/adminFirstName"
         android:layout_width="228dp"
         android:layout_height="46dp"
         android:hint="First Name"
@@ -124,6 +131,7 @@
         app:layout_constraintVertical_bias="0.337" />
 
     <EditText
+        android:id="@+id/adminId"
         android:layout_width="80dp"
         android:layout_height="46dp"
         android:hint="ID"
