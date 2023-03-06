@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "721584620282",
+    "project_id": "farmfriend2-112e4",
+    "storage_bucket": "farmfriend2-112e4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:721584620282:android:0f24687ea18da491e33f43",
+        "android_client_info": {
+          "package_name": "com.example.farmfriend2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "721584620282-mu0rc1tvf9j459tlpe50si89tnjuaquf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBLGMbXpUR6OQJhtdtEUVCZFWLDmquYdAA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "721584620282-mu0rc1tvf9j459tlpe50si89tnjuaquf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
