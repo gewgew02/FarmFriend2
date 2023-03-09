@@ -7,11 +7,28 @@
     android:layout_height="match_parent"
     tools:context=".FarmerProfileActivity">
 
+    <TextView
+        android:id="@+id/textViewAdminContact"
+        android:layout_width="250dp"
+        android:layout_height="30dp"
+        android:gravity="center"
+        android:text="########"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.563" />
+
     <Button
         android:id="@+id/buttonSettings"
-        android:layout_width="110dp"
-        android:layout_height="45dp"
+        android:layout_width="90dp"
+        android:layout_height="40dp"
+        android:textSize="10sp"
         android:backgroundTint="@color/white"
+        android:background="@drawable/rounded_corner"
         android:text="Settings"
         android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -23,11 +40,13 @@
 
     <Button
         android:id="@+id/buttonLogout"
-        android:layout_width="110dp"
-        android:layout_height="45dp"
+        android:layout_width="90dp"
+        android:layout_height="40dp"
+        android:background="@drawable/rounded_corner"
         android:backgroundTint="@color/white"
         android:text="Logout"
         android:textColor="@color/black"
+        android:textSize="10sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.945"
@@ -40,7 +59,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="PROFILE"
-        android:textSize="25sp"
+        android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -50,7 +69,7 @@
         app:layout_constraintVertical_bias="0.098" />
 
     <ImageView
-        android:id="@+id/imageView5"
+        android:id="@+id/imageViewAdmin"
         android:layout_width="182dp"
         android:layout_height="155dp"
         android:src="@drawable/ic_baseline_account_circle_24"
@@ -62,32 +81,49 @@
         app:layout_constraintVertical_bias="0.209" />
 
     <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/textViewName"
+        android:layout_width="250dp"
+        android:layout_height="30dp"
+        android:gravity="center"
         android:text="Gayle Marie Dela Torre"
-        android:textSize="25sp"
+        android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.559"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.401" />
+        app:layout_constraintVertical_bias="0.405" />
 
     <TextView
-        android:id="@+id/textView5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Admin"
-        android:textSize="25sp"
+        android:id="@+id/textViewAddress"
+        android:layout_width="250dp"
+        android:layout_height="30dp"
+        android:gravity="center"
+        android:text="Cebu City"
+        android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.499" />
+        app:layout_constraintVertical_bias="0.457" />
+
+    <TextView
+        android:id="@+id/textViewCategory"
+        android:layout_width="250dp"
+        android:layout_height="30dp"
+        android:gravity="center"
+        android:text="Admin"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.51" />
 
     <ImageView
         android:id="@+id/imageView3"
@@ -95,37 +131,11 @@
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.341"
+        app:layout_constraintHorizontal_bias="0.085"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.458"
         app:srcCompat="@drawable/ic_baseline_location_on_24" />
-
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Cebu City"
-        android:textSize="25sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.547"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.45" />
-
-    <ImageView
-        android:id="@+id/imageView9"
-        android:layout_width="30dp"
-        android:layout_height="32dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.086"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.4"
-        app:srcCompat="@drawable/ic_baseline_perm_identity_24" />
 
     <ImageView
         android:id="@+id/imageView2"
@@ -133,37 +143,29 @@
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.351"
+        app:layout_constraintHorizontal_bias="0.085"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.499"
+        app:layout_constraintVertical_bias="0.514"
         app:srcCompat="@drawable/ic_baseline_assignment_24" />
 
     <ImageView
-        android:id="@+id/imageView6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/imageView9"
+        android:layout_width="26dp"
+        android:layout_height="25dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.459"
+        app:layout_constraintHorizontal_bias="0.085"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.233"/>
-    <ImageView
-        android:id="@+id/imageView8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.459"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.335"/>
+        app:layout_constraintVertical_bias="0.409"
+        app:srcCompat="@drawable/ic_baseline_perm_identity_24" />
 
     <Button
         android:id="@+id/buttonCheckWeather"
         android:layout_width="270dp"
-        android:layout_height="45dp"
+        android:layout_height="40dp"
+        android:background="@drawable/rounded_corner"
         android:backgroundTint="@color/light_green"
         android:text="Check Weather"
         android:textColor="@color/black"
@@ -172,12 +174,28 @@
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.603" />
+        app:layout_constraintVertical_bias="0.658" />
+
+    <Button
+        android:id="@+id/buttonViewUsersLGU"
+        android:layout_width="270dp"
+        android:layout_height="40dp"
+        android:background="@drawable/rounded_corner"
+        android:backgroundTint="@color/light_green"
+        android:text="View User LGU/NGO"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.887" />
 
     <Button
         android:id="@+id/buttonViewUserFarmer"
         android:layout_width="270dp"
-        android:layout_height="45dp"
+        android:layout_height="40dp"
+        android:background="@drawable/rounded_corner"
         android:backgroundTint="@color/light_green"
         android:text="View User Farmers"
         android:textColor="@color/black"
@@ -186,26 +204,13 @@
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.774"/>
-
-    <Button
-        android:id="@+id/buttonViewUsersLGU"
-        android:layout_width="270dp"
-        android:layout_height="45dp"
-        android:backgroundTint="@color/light_green"
-        android:text="View User LGU/NGO"
-        android:textColor="@color/black"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.517"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.871" />
+        app:layout_constraintVertical_bias="0.808" />
 
     <Button
         android:id="@+id/buttonSuggestedCropstoPlant"
         android:layout_width="270dp"
-        android:layout_height="45dp"
+        android:layout_height="40dp"
+        android:background="@drawable/rounded_corner"
         android:backgroundTint="@color/light_green"
         android:text="Suggested Crops to Plant"
         android:textColor="@color/black"
@@ -214,6 +219,18 @@
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.689" />
+        app:layout_constraintVertical_bias="0.732" />
+
+    <ImageView
+        android:id="@+id/imageView36"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.085"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.567"
+        app:srcCompat="@drawable/ic_baseline_call_24" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

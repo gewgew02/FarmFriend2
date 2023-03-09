@@ -1,13 +1,12 @@
 package com.example.farmfriend2;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -19,25 +18,18 @@ import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
-import org.checkerframework.checker.nullness.qual.NonNull;
-
 import java.util.HashMap;
 import java.util.Map;
 
-public class EditActivity extends AppCompatActivity {
-    private Button buttonSettings, buttonLogout, buttonSaveEdit;
+public class EditLGU extends AppCompatActivity {
+    private Button buttonSettings, buttonLogout, buttonSaveEditLGU;
     final String TAG = "FIRESTORE";
     FirebaseFirestore db = FirebaseFirestore.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        requestWindowFeature(Window.FEATURE_NO_TITLE);
-//        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-//        getSupportActionBar().hide();
-
-        setContentView(R.layout.activity_edit);
-
+        setContentView(R.layout.activity_edit_lgu);
         EditText LGUFirstName = findViewById(R.id.LGUFirstName);
         EditText LGULastName = findViewById(R.id.LGULastName);
         EditText LGUCategory = findViewById(R.id.LGUCategory);
@@ -46,7 +38,7 @@ public class EditActivity extends AppCompatActivity {
         EditText LGUPassword = findViewById(R.id.LGUPassword);
         TextView LGUId = findViewById(R.id.LGUId);
 
-        db.collection("admin_sign_in")
+        db.collection("LGU_sign_in")
                 .whereEqualTo("email", TemporaryDB.email)
                 //.whereEqualTo("email", emailLogin)
                 .get().addOnSuccessListener(queryDocumentSnapshots2 -> {
@@ -59,17 +51,17 @@ public class EditActivity extends AppCompatActivity {
                         LGUAddress.setText(documentSnapshot2.getString("address"));
                         LGUContactNum.setText(documentSnapshot2.getString("contact_num"));
                         LGUPassword.setText(documentSnapshot2.getString("password"));
-                        LGUId.setText(documentSnapshot2.getString("admin_sign_in_id"));
+                        LGUId.setText(documentSnapshot2.getString("LGU_sign_in_id"));
                     } else {
                         // User not found in Firestore
-                        Toast.makeText(EditActivity.this, "", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(EditLGU.this, "", Toast.LENGTH_SHORT).show();
                     }
                 });
-        buttonSaveEdit = findViewById(R.id.buttonSaveEdit);
-        buttonSaveEdit.setOnClickListener(new View.OnClickListener() {
+        buttonSaveEditLGU = findViewById(R.id.buttonSaveEditLGU);
+        buttonSaveEditLGU.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                DocumentReference docRef = db.collection("admin_sign_in").document();
+                DocumentReference docRef = db.collection("LGU_sign_in").document();
 
                 //stores the information to the newly created variables
                 String firstnameInput = LGUFirstName.getText().toString();
@@ -94,6 +86,15 @@ public class EditActivity extends AppCompatActivity {
                 System.exit(0);
             }
         });
+
+        buttonSettings = findViewById(R.id.buttonSettings);
+        buttonSettings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplication(), SettingsFarmer.class);
+                startActivity(intent);
+            }
+        });
     }
 
     public void addUser(String firstnameInput, String lastnameInput, String categoryInput,
@@ -106,25 +107,24 @@ public class EditActivity extends AppCompatActivity {
         signUp.put("contact_num", contactNumInput);
         signUp.put("password", passInput);
 
-
         db.collection("LGU_sign_in").document(TemporaryDB.email)
-                .set(signUp)
-                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                .update(signUp).addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void unused) {
                         Log.d(TAG, "DocumentSnapshot added with ID: " + TemporaryDB.email);
-                        Toast.makeText(EditActivity.this, "Successfully Added"
+                        Toast.makeText(EditLGU.this, "Successfully Added"
                                 , Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(getApplication(), LGUProfileActivity.class);
+                        startActivity(intent);
                     }
-                })
-                .addOnFailureListener(new OnFailureListener() {
+                }).addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(EditActivity.this, "Error adding document" + e
+                        Toast.makeText(EditLGU.this, "Error adding document" + e
                                 , Toast.LENGTH_SHORT).show();
                         Log.w(TAG, "Error adding document", e);
+
                     }
                 });
     }
-
 }

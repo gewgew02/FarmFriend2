@@ -1,13 +1,12 @@
 package com.example.farmfriend2;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -19,65 +18,59 @@ import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
-import org.checkerframework.checker.nullness.qual.NonNull;
-
 import java.util.HashMap;
 import java.util.Map;
 
-public class EditActivity extends AppCompatActivity {
-    private Button buttonSettings, buttonLogout, buttonSaveEdit;
+public class EditFarmer extends AppCompatActivity {
+    private Button buttonSettings, buttonLogout, buttonSaveEditFarmer;
     final String TAG = "FIRESTORE";
     FirebaseFirestore db = FirebaseFirestore.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        requestWindowFeature(Window.FEATURE_NO_TITLE);
-//        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-//        getSupportActionBar().hide();
+        setContentView(R.layout.activity_edit_farmer);
 
-        setContentView(R.layout.activity_edit);
+        EditText farmerFirstName = findViewById(R.id.farmerFirstName);
+        EditText farmerLastName = findViewById(R.id.farmerLastName);
+        EditText farmerCategory = findViewById(R.id.farmerCategory);
+        EditText farmerAddress = findViewById(R.id.farmerAddress);
+        EditText farmerContactNum = findViewById(R.id.farmerContactNum);
+        EditText farmerPassword = findViewById(R.id.farmerPassword);
+        TextView farmerId = findViewById(R.id.farmerId);
 
-        EditText LGUFirstName = findViewById(R.id.LGUFirstName);
-        EditText LGULastName = findViewById(R.id.LGULastName);
-        EditText LGUCategory = findViewById(R.id.LGUCategory);
-        EditText LGUAddress = findViewById(R.id.LGUAddress);
-        EditText LGUContactNum = findViewById(R.id.LGUContactNum);
-        EditText LGUPassword = findViewById(R.id.LGUPassword);
-        TextView LGUId = findViewById(R.id.LGUId);
-
-        db.collection("admin_sign_in")
+        db.collection("farmer_sign_in")
                 .whereEqualTo("email", TemporaryDB.email)
                 //.whereEqualTo("email", emailLogin)
                 .get().addOnSuccessListener(queryDocumentSnapshots2 -> {
                     if (!queryDocumentSnapshots2.isEmpty()) {
                         DocumentSnapshot documentSnapshot2 = queryDocumentSnapshots2.getDocuments().get(0);
 
-                        LGUFirstName.setText(documentSnapshot2.getString("first_name"));
-                        LGULastName.setText(documentSnapshot2.getString("last_name"));
-                        LGUCategory.setText(documentSnapshot2.getString("category"));
-                        LGUAddress.setText(documentSnapshot2.getString("address"));
-                        LGUContactNum.setText(documentSnapshot2.getString("contact_num"));
-                        LGUPassword.setText(documentSnapshot2.getString("password"));
-                        LGUId.setText(documentSnapshot2.getString("admin_sign_in_id"));
+                        farmerFirstName.setText(documentSnapshot2.getString("first_name"));
+                        farmerLastName.setText(documentSnapshot2.getString("last_name"));
+                        farmerCategory.setText(documentSnapshot2.getString("category"));
+                        farmerAddress.setText(documentSnapshot2.getString("address"));
+                        farmerContactNum.setText(documentSnapshot2.getString("contact_num"));
+                        farmerPassword.setText(documentSnapshot2.getString("password"));
+                        farmerId.setText(documentSnapshot2.getString("farmer_sign_in_id"));
                     } else {
                         // User not found in Firestore
-                        Toast.makeText(EditActivity.this, "", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(EditFarmer.this, "", Toast.LENGTH_SHORT).show();
                     }
                 });
-        buttonSaveEdit = findViewById(R.id.buttonSaveEdit);
-        buttonSaveEdit.setOnClickListener(new View.OnClickListener() {
+        buttonSaveEditFarmer = findViewById(R.id.buttonSaveEditFarmer);
+        buttonSaveEditFarmer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                DocumentReference docRef = db.collection("admin_sign_in").document();
+                DocumentReference docRef = db.collection("farmer_sign_in").document();
 
                 //stores the information to the newly created variables
-                String firstnameInput = LGUFirstName.getText().toString();
-                String lastnameInput = LGULastName.getText().toString();
-                String categoryInput = LGUCategory.getText().toString();
-                String addressInput = LGUAddress.getText().toString();
-                String contactNumInput = LGUContactNum.getText().toString();
-                String passInput = LGUPassword.getText().toString();
+                String firstnameInput = farmerFirstName.getText().toString();
+                String lastnameInput = farmerLastName.getText().toString();
+                String categoryInput = farmerCategory.getText().toString();
+                String addressInput = farmerAddress.getText().toString();
+                String contactNumInput = farmerContactNum.getText().toString();
+                String passInput = farmerPassword.getText().toString();
 
                 addUser(firstnameInput, lastnameInput, categoryInput,
                         addressInput, contactNumInput, passInput);
@@ -94,6 +87,15 @@ public class EditActivity extends AppCompatActivity {
                 System.exit(0);
             }
         });
+
+        buttonSettings = findViewById(R.id.buttonSettings);
+        buttonSettings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplication(), SettingsFarmer.class);
+                startActivity(intent);
+            }
+        });
     }
 
     public void addUser(String firstnameInput, String lastnameInput, String categoryInput,
@@ -107,24 +109,24 @@ public class EditActivity extends AppCompatActivity {
         signUp.put("password", passInput);
 
 
-        db.collection("LGU_sign_in").document(TemporaryDB.email)
-                .set(signUp)
-                .addOnSuccessListener(new OnSuccessListener<Void>() {
+        db.collection("farmer_sign_in").document(TemporaryDB.email)
+                .update(signUp).addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void unused) {
                         Log.d(TAG, "DocumentSnapshot added with ID: " + TemporaryDB.email);
-                        Toast.makeText(EditActivity.this, "Successfully Added"
+                        Toast.makeText(EditFarmer.this, "Successfully Added"
                                 , Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(getApplication(), FarmerProfileActivity.class);
+                        startActivity(intent);
                     }
-                })
-                .addOnFailureListener(new OnFailureListener() {
+                }).addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(EditActivity.this, "Error adding document" + e
+                        Toast.makeText(EditFarmer.this, "Error adding document" + e
                                 , Toast.LENGTH_SHORT).show();
                         Log.w(TAG, "Error adding document", e);
+
                     }
                 });
     }
-
 }

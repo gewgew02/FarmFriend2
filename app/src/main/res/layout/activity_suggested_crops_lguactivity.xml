@@ -9,28 +9,32 @@
 
     <Button
         android:id="@+id/buttonSettings"
-        android:layout_width="116dp"
-        android:layout_height="45dp"
+        android:layout_width="90dp"
+        android:layout_height="40dp"
+        android:textSize="10sp"
         android:backgroundTint="@color/white"
+        android:background="@drawable/rounded_corner"
         android:text="Settings"
         android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.044"
+        app:layout_constraintHorizontal_bias="0.054"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.093" />
 
-        <Button
+    <Button
         android:id="@+id/buttonLogout"
-        android:layout_width="116dp"
-        android:layout_height="45dp"
+        android:layout_width="90dp"
+        android:layout_height="40dp"
+        android:textSize="10sp"
         android:backgroundTint="@color/white"
+        android:background="@drawable/rounded_corner"
         android:text="Logout"
         android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.955"
+        app:layout_constraintHorizontal_bias="0.945"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.093" />
@@ -40,7 +44,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="LGU/NGO"
-        android:textSize="16sp"
+        android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -63,9 +67,10 @@
     <Button
         android:id="@+id/buttonSuggestedCropstoPlant"
         android:layout_width="270dp"
-        android:layout_height="45dp"
+        android:layout_height="40dp"
         android:backgroundTint="#BAEAD0"
         android:text="Suggested Crops to Plant"
+        android:background="@drawable/rounded_corner"
         android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -155,5 +160,4 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.296"
         app:srcCompat="@drawable/potato" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,7 +5,8 @@
     android:background="@drawable/background"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SettingsActivity">
+    tools:context=".SettingsLGU">
+
 
     <TextView
         android:id="@+id/buttonSettings"
@@ -25,7 +26,7 @@
         app:layout_constraintVertical_bias="0.093" />
 
     <Button
-        android:id="@+id/buttonProfile"
+        android:id="@+id/setBtnProfileLGU"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@color/transparent"
@@ -52,7 +53,7 @@
         app:srcCompat="@drawable/ic_baseline_notifications_24" />
 
     <Button
-        android:id="@+id/buttonNotification"
+        android:id="@+id/setBtnNotificationLGU"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@color/transparent"
@@ -79,7 +80,7 @@
         app:srcCompat="@drawable/ic_baseline_account_circle_24" />
 
     <Button
-        android:id="@+id/buttonEditAccount"
+        android:id="@+id/setBtnEditLGU"
         android:layout_width="203dp"
         android:layout_height="50dp"
         android:background="@color/transparent"
@@ -119,7 +120,7 @@
         app:srcCompat="@drawable/ic_baseline_star_rate_24" />
 
     <Button
-        android:id="@+id/buttonRate"
+        android:id="@+id/setBtnRateLGU"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@color/transparent"
@@ -134,7 +135,7 @@
         app:layout_constraintVertical_bias="0.426" />
 
     <Button
-        android:id="@+id/buttonDeleteAccount"
+        android:id="@+id/setBtnDeleteLGU"
         android:layout_width="200dp"
         android:layout_height="40dp"
         android:backgroundTint="@color/dark_green"
@@ -162,5 +163,4 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.864" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

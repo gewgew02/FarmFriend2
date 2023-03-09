@@ -10,8 +10,10 @@
     <Button
         android:id="@+id/buttonSignIn"
         android:layout_width="164dp"
-        android:layout_height="49dp"
+        android:layout_height="40dp"
         android:backgroundTint="@color/black"
+        android:background="@drawable/rounded_corner"
+        android:textColor="@color/white"
         android:text="Sign Up"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -36,8 +38,10 @@
     <Button
         android:id="@+id/buttonLogin"
         android:layout_width="164dp"
-        android:layout_height="49dp"
+        android:layout_height="40dp"
         android:backgroundTint="@color/black"
+        android:background="@drawable/rounded_corner"
+        android:textColor="@color/white"
         android:text="Log In"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

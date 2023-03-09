@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -30,6 +32,10 @@ public class SignInLGUActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+//        requestWindowFeature(Window.FEATURE_NO_TITLE);
+//        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+//        getSupportActionBar().hide();
+
         setContentView(R.layout.activity_sign_in_lguactivity);
         //Find the ID every Variable
         EditText LGUFirstName = findViewById(R.id.LGUFirstName);
@@ -73,7 +79,7 @@ public class SignInLGUActivity extends AppCompatActivity {
             public void addUser(String firstnameInput, String lastnameInput, String idInput, String categoryInput,
                                   String addressInput, String contactNumInput, String emailInput, String passInput) {
                 Map<String, Object> signUp = new HashMap<>();
-                signUp.put("farmer_sign_in_id", idInput);
+                signUp.put("LGU_sign_in_id", idInput);
                 signUp.put("first_name", firstnameInput);
                 signUp.put("last_name", lastnameInput);
                 signUp.put("address", addressInput);

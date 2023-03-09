@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -30,6 +32,10 @@ public class SignInFarmerActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+//        requestWindowFeature(Window.FEATURE_NO_TITLE);
+//        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+//        getSupportActionBar().hide();
+
         setContentView(R.layout.activity_sign_in_farmer);
         //Find the ID every Variable
         EditText farmerFirstName = findViewById(R.id.farmerFirstName);
@@ -70,9 +76,9 @@ public class SignInFarmerActivity extends AppCompatActivity {
             public void addUser(String firstnameInput, String lastnameInput, String idInput, String categoryInput,
                                 String addressInput, String contactNumInput, String emailInput, String passInput) {
                 Map<String, Object> signUp = new HashMap<>();
-                signUp.put("farmer_sign_in_id", firstnameInput);
-                signUp.put("first_name", lastnameInput);
-                signUp.put("last_name", idInput);
+                signUp.put("farmer_sign_in_id", idInput);
+                signUp.put("first_name", firstnameInput);
+                signUp.put("last_name", lastnameInput);
                 signUp.put("address", addressInput);
                 signUp.put("category", categoryInput);
                 signUp.put("contact_num", contactNumInput);
@@ -101,10 +107,7 @@ public class SignInFarmerActivity extends AppCompatActivity {
             public void Finish(){
                 Intent intent = new Intent(getApplication(), LogInActivity.class);
                 startActivity(intent);
-                Toast.makeText(SignInFarmerActivity.this, "Successfully Added"
-                        , Toast.LENGTH_SHORT).show();
             }
         });
-
     }
 }
