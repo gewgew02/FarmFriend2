@@ -36,7 +36,7 @@ public class EditLGU extends AppCompatActivity {
         EditText LGUAddress = findViewById(R.id.LGUAddress);
         EditText LGUContactNum = findViewById(R.id.LGUContactNum);
         EditText LGUPassword = findViewById(R.id.LGUPassword);
-        TextView LGUId = findViewById(R.id.LGUId);
+//        TextView LGUId = findViewById(R.id.LGUId);
 
         db.collection("LGU_sign_in")
                 .whereEqualTo("email", TemporaryDB.email)
@@ -51,7 +51,7 @@ public class EditLGU extends AppCompatActivity {
                         LGUAddress.setText(documentSnapshot2.getString("address"));
                         LGUContactNum.setText(documentSnapshot2.getString("contact_num"));
                         LGUPassword.setText(documentSnapshot2.getString("password"));
-                        LGUId.setText(documentSnapshot2.getString("LGU_sign_in_id"));
+//                        LGUId.setText(documentSnapshot2.getString("LGU_sign_in_id"));
                     } else {
                         // User not found in Firestore
                         Toast.makeText(EditLGU.this, "", Toast.LENGTH_SHORT).show();
@@ -112,7 +112,7 @@ public class EditLGU extends AppCompatActivity {
                     @Override
                     public void onSuccess(Void unused) {
                         Log.d(TAG, "DocumentSnapshot added with ID: " + TemporaryDB.email);
-                        Toast.makeText(EditLGU.this, "Successfully Added"
+                        Toast.makeText(EditLGU.this, "Successfully Edited"
                                 , Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(getApplication(), LGUProfileActivity.class);
                         startActivity(intent);
@@ -120,7 +120,7 @@ public class EditLGU extends AppCompatActivity {
                 }).addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(EditLGU.this, "Error adding document" + e
+                        Toast.makeText(EditLGU.this, "Error editing document" + e
                                 , Toast.LENGTH_SHORT).show();
                         Log.w(TAG, "Error adding document", e);
 

@@ -40,7 +40,7 @@ public class SignInFarmerActivity extends AppCompatActivity {
         //Find the ID every Variable
         EditText farmerFirstName = findViewById(R.id.farmerFirstName);
         EditText farmerLastName = findViewById(R.id.farmerLastName);
-        EditText farmerId = findViewById(R.id.farmerId);
+//        EditText farmerId = findViewById(R.id.farmerId);
         EditText farmerCategory = findViewById(R.id.farmerCategory);
         EditText farmerAddress = findViewById(R.id.farmerAddress);
         EditText farmerContactNum = findViewById(R.id.farmerContactNum);
@@ -56,27 +56,26 @@ public class SignInFarmerActivity extends AppCompatActivity {
                 //stores the information to the newly created variables
                 String firstnameInput = farmerFirstName.getText().toString();
                 String lastnameInput = farmerLastName.getText().toString();
-                String idInput = farmerId.getText().toString();
+//                String idInput = farmerId.getText().toString();
                 String categoryInput = farmerCategory.getText().toString();
                 String addressInput = farmerAddress.getText().toString();
                 String contactNumInput = farmerContactNum.getText().toString();
                 String farmerEmailInput = farmerEmail.getText().toString();
                 String passInput = farmerPassword.getText().toString();
 
-                if(!firstnameInput.isEmpty() && !lastnameInput.isEmpty() && !idInput.isEmpty() && !categoryInput.isEmpty() &&
+                if(!firstnameInput.isEmpty() && !lastnameInput.isEmpty() && !categoryInput.isEmpty() &&
                         !addressInput.isEmpty() && !contactNumInput.isEmpty() && !farmerEmailInput.isEmpty() && !passInput.isEmpty()){
-                    addUser(firstnameInput, lastnameInput, idInput, categoryInput,
-                            addressInput, contactNumInput, farmerEmailInput, passInput);
+                    addUser(firstnameInput, lastnameInput, categoryInput, addressInput, contactNumInput, farmerEmailInput, passInput);
                     Finish();
                 } else{
                     Toast.makeText(SignInFarmerActivity.this, "All fields required!"
                             , Toast.LENGTH_SHORT).show();
                 }
             }
-            public void addUser(String firstnameInput, String lastnameInput, String idInput, String categoryInput,
+            public void addUser(String firstnameInput, String lastnameInput, String categoryInput,
                                 String addressInput, String contactNumInput, String emailInput, String passInput) {
                 Map<String, Object> signUp = new HashMap<>();
-                signUp.put("farmer_sign_in_id", idInput);
+//                signUp.put("farmer_sign_in_id", idInput);
                 signUp.put("first_name", firstnameInput);
                 signUp.put("last_name", lastnameInput);
                 signUp.put("address", addressInput);
@@ -105,7 +104,7 @@ public class SignInFarmerActivity extends AppCompatActivity {
                         });
             }
             public void Finish(){
-                Intent intent = new Intent(getApplication(), LogInActivity.class);
+                Intent intent = new Intent(getApplication(), LoginFarmer.class);
                 startActivity(intent);
             }
         });

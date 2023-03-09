@@ -40,7 +40,7 @@ public class SignInLGUActivity extends AppCompatActivity {
         //Find the ID every Variable
         EditText LGUFirstName = findViewById(R.id.LGUFirstName);
         EditText LGULastName = findViewById(R.id.LGULastName);
-        EditText LGUId = findViewById(R.id.LGUId);
+        //EditText LGUId = findViewById(R.id.LGUId);
         EditText LGUCategory = findViewById(R.id.LGUCategory);
         EditText LGUAddress = findViewById(R.id.LGUAddress);
         EditText LGUContactNum = findViewById(R.id.LGUContactNum);
@@ -58,17 +58,16 @@ public class SignInLGUActivity extends AppCompatActivity {
                 //stores the information to the newly created variables
                 String firstnameInput = LGUFirstName.getText().toString();
                 String lastnameInput = LGULastName.getText().toString();
-                String idInput = LGUId.getText().toString();
+                //String idInput = LGUId.getText().toString();
                 String categoryInput = LGUCategory.getText().toString();
                 String addressInput = LGUAddress.getText().toString();
                 String contactNumInput = LGUContactNum.getText().toString();
                 String emailInput = LGUEmail.getText().toString();
                 String passInput = LGUPassword.getText().toString();
 
-                if(!firstnameInput.isEmpty() && !lastnameInput.isEmpty() && !idInput.isEmpty() && !categoryInput.isEmpty() &&
+                if(!firstnameInput.isEmpty() && !lastnameInput.isEmpty()  && !categoryInput.isEmpty() &&
                         !addressInput.isEmpty() && !contactNumInput.isEmpty() && !emailInput.isEmpty() && !passInput.isEmpty()){
-                    addUser(firstnameInput, lastnameInput, idInput, categoryInput,
-                            addressInput, contactNumInput, emailInput, passInput);
+                    addUser(firstnameInput, lastnameInput, categoryInput, addressInput, contactNumInput, emailInput, passInput);
                     Finish();
                 } else{
                     Toast.makeText(SignInLGUActivity.this, "All fields required!"
@@ -76,10 +75,10 @@ public class SignInLGUActivity extends AppCompatActivity {
                 }
             }
 
-            public void addUser(String firstnameInput, String lastnameInput, String idInput, String categoryInput,
+            public void addUser(String firstnameInput, String lastnameInput, String categoryInput,
                                   String addressInput, String contactNumInput, String emailInput, String passInput) {
                 Map<String, Object> signUp = new HashMap<>();
-                signUp.put("LGU_sign_in_id", idInput);
+               // signUp.put("LGU_sign_in_id", idInput);
                 signUp.put("first_name", firstnameInput);
                 signUp.put("last_name", lastnameInput);
                 signUp.put("address", addressInput);
@@ -108,7 +107,7 @@ public class SignInLGUActivity extends AppCompatActivity {
                         });
             }
             public void Finish(){
-                Intent intent = new Intent(getApplication(), LogInActivity.class);
+                Intent intent = new Intent(getApplication(), LoginLGU.class);
                 startActivity(intent);
                 Toast.makeText(SignInLGUActivity.this, "Successfully Added"
                         , Toast.LENGTH_SHORT).show();

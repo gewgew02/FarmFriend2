@@ -37,7 +37,7 @@ public class EditFarmer extends AppCompatActivity {
         EditText farmerAddress = findViewById(R.id.farmerAddress);
         EditText farmerContactNum = findViewById(R.id.farmerContactNum);
         EditText farmerPassword = findViewById(R.id.farmerPassword);
-        TextView farmerId = findViewById(R.id.farmerId);
+        //TextView farmerId = findViewById(R.id.farmerId);
 
         db.collection("farmer_sign_in")
                 .whereEqualTo("email", TemporaryDB.email)
@@ -52,7 +52,7 @@ public class EditFarmer extends AppCompatActivity {
                         farmerAddress.setText(documentSnapshot2.getString("address"));
                         farmerContactNum.setText(documentSnapshot2.getString("contact_num"));
                         farmerPassword.setText(documentSnapshot2.getString("password"));
-                        farmerId.setText(documentSnapshot2.getString("farmer_sign_in_id"));
+//                        farmerId.setText(documentSnapshot2.getString("farmer_sign_in_id"));
                     } else {
                         // User not found in Firestore
                         Toast.makeText(EditFarmer.this, "", Toast.LENGTH_SHORT).show();
@@ -114,7 +114,7 @@ public class EditFarmer extends AppCompatActivity {
                     @Override
                     public void onSuccess(Void unused) {
                         Log.d(TAG, "DocumentSnapshot added with ID: " + TemporaryDB.email);
-                        Toast.makeText(EditFarmer.this, "Successfully Added"
+                        Toast.makeText(EditFarmer.this, "Successfully Edited"
                                 , Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(getApplication(), FarmerProfileActivity.class);
                         startActivity(intent);
@@ -122,7 +122,7 @@ public class EditFarmer extends AppCompatActivity {
                 }).addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(EditFarmer.this, "Error adding document" + e
+                        Toast.makeText(EditFarmer.this, "Error edited document" + e
                                 , Toast.LENGTH_SHORT).show();
                         Log.w(TAG, "Error adding document", e);
 

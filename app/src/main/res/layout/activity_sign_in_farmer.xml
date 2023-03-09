@@ -7,162 +7,128 @@
     android:layout_height="match_parent"
     tools:context=".SignInFarmerActivity">
 
-    <ScrollView
-        android:layout_width="310dp"
-        android:layout_height="661dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <EditText
+        android:id="@+id/farmerFirstName"
+        android:layout_width="285dp"
+        android:layout_height="52dp"
+        android:hint="First Name"
+        app:layout_constraintBottom_toTopOf="@+id/farmerLastName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.643"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.927">
+        app:layout_constraintTop_toBottomOf="@id/textView" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:foregroundGravity="center"
-            android:orientation="vertical">
+    <EditText
+        android:id="@+id/farmerContactNum"
+        android:layout_width="285dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="3dp"
+        android:hint="Mobile Number"
+        app:layout_constraintBottom_toTopOf="@+id/farmerEmail"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.515"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/farmerAddress" />
 
-            <ImageView
-                android:id="@+id/imageView4"
-                android:layout_width="316dp"
-                android:layout_height="110dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.497"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.084"
-                app:srcCompat="@drawable/logo" />
+    <EditText
+        android:id="@+id/farmerCategory"
+        android:layout_width="285dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="12dp"
+        android:hint="Category"
+        app:layout_constraintBottom_toTopOf="@+id/farmerContactNum"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/farmerLastName"
+        app:layout_constraintVertical_bias="0.0" />
 
-            <TextView
-                android:id="@+id/textView"
-                android:layout_width="318dp"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="Welcome Farmer"
-                android:textSize="26sp"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.488"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.251" />
+    <EditText
+        android:id="@+id/farmerLastName"
+        android:layout_width="285dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="112dp"
+        android:hint="Last Name"
+        app:layout_constraintBottom_toTopOf="@id/farmerAddress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView4"
+        app:layout_constraintVertical_bias="0.0" />
 
-            <EditText
-                android:id="@+id/farmerFirstName"
-                android:layout_width="285dp"
-                android:layout_height="52dp"
-                android:hint="First Name"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.437"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.337" />
+    <EditText
+        android:id="@+id/farmerPassword"
+        android:layout_width="285dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="3dp"
+        android:hint="Password"
+        app:layout_constraintBottom_toTopOf="@+id/buttonSignIn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/farmerEmail" />
 
-            <EditText
-                android:id="@+id/farmerLastName"
-                android:layout_width="285dp"
-                android:layout_height="52dp"
-                android:hint="Last Name"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.437"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.417" />
+    <EditText
+        android:id="@+id/farmerAddress"
+        android:layout_width="285dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="3dp"
+        android:hint="Address"
+        app:layout_constraintBottom_toTopOf="@+id/farmerContactNum"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.507"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/farmerCategory"
+        app:layout_constraintVertical_bias="0.125" />
 
-            <EditText
-                android:id="@+id/farmerId"
-                android:layout_width="285dp"
-                android:layout_height="52dp"
-                android:hint="ID"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.241"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.494" />
-
-            <EditText
-                android:id="@+id/farmerCategory"
-                android:layout_width="285dp"
-                android:layout_height="52dp"
-                android:hint="Category"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.633"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.494" />
-
-            <EditText
-                android:id="@+id/farmerAddress"
-                android:layout_width="285dp"
-                android:layout_height="52dp"
-                android:hint="Address"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.437"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.575" />
-
-            <EditText
-                android:id="@+id/farmerContactNum"
-                android:layout_width="282dp"
-                android:layout_height="52dp"
-                android:hint="Mobile Number"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.437"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.661" />
-
-
-            <EditText
-                android:id="@+id/farmerEmail"
-                android:layout_width="282dp"
-                android:layout_height="52dp"
-                android:hint="Email"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.437"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.745" />
-
-            <EditText
-                android:id="@+id/farmerPassword"
-                android:layout_width="285dp"
-                android:layout_height="52dp"
-                android:hint="Password"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.437"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.824" />
-        </LinearLayout>
-    </ScrollView>
+    <EditText
+        android:id="@+id/farmerEmail"
+        android:layout_width="285dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="3dp"
+        android:hint="Email"
+        app:layout_constraintBottom_toTopOf="@+id/farmerPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/farmerContactNum" />
 
     <Button
         android:id="@+id/buttonSignIn"
         android:layout_width="150dp"
         android:layout_height="40dp"
-        android:backgroundTint="@color/black"
+        android:layout_marginBottom="36dp"
         android:background="@drawable/rounded_corner"
-        android:text="Sign Up"
+        android:backgroundTint="@color/black"
         android:gravity="center"
+        android:text="Sign Up"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/farmerPassword" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="316dp"
+        android:layout_height="110dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.916" />
+        app:layout_constraintVertical_bias="0.048"
+        app:srcCompat="@drawable/logo" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="315dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Welcome Farmer"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/farmerFirstName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

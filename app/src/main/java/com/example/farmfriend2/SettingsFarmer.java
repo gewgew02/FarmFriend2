@@ -35,7 +35,7 @@ public class SettingsFarmer extends AppCompatActivity {
         setBtnProfileFarmer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplication(), EditActivity.class);
+                Intent intent = new Intent(getApplication(), FarmerProfileActivity.class);
                 startActivity(intent);
             }
         });
@@ -44,7 +44,7 @@ public class SettingsFarmer extends AppCompatActivity {
         setBtnNotificationFarmer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplication(), EditActivity.class);
+                Intent intent = new Intent(getApplication(), Notifications.class);
                 startActivity(intent);
             }
         });
@@ -53,7 +53,7 @@ public class SettingsFarmer extends AppCompatActivity {
         setBtnRateFarmer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplication(), EditActivity.class);
+                Intent intent = new Intent(getApplication(), Rate.class);
                 startActivity(intent);
             }
         });

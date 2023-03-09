@@ -35,7 +35,7 @@ public class SettingsLGU extends AppCompatActivity {
         setBtnProfileLGU.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplication(), EditActivity.class);
+                Intent intent = new Intent(getApplication(), LGUProfileActivity.class);
                 startActivity(intent);
             }
         });
@@ -44,7 +44,7 @@ public class SettingsLGU extends AppCompatActivity {
         setBtnNotificationLGU.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplication(), EditActivity.class);
+                Intent intent = new Intent(getApplication(), Notifications.class);
                 startActivity(intent);
             }
         });
@@ -53,7 +53,7 @@ public class SettingsLGU extends AppCompatActivity {
         setBtnRateLGU.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplication(), EditActivity.class);
+                Intent intent = new Intent(getApplication(), Rate.class);
                 startActivity(intent);
             }
         });

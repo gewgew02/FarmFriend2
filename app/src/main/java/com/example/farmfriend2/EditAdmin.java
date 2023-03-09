@@ -37,7 +37,7 @@ public class EditAdmin extends AppCompatActivity {
         EditText adminAddress = findViewById(R.id.adminAddress);
         EditText adminContactNum = findViewById(R.id.adminContactNum);
         EditText adminPassword = findViewById(R.id.adminPassword);
-        TextView adminId = findViewById(R.id.adminId);
+        //TextView adminId = findViewById(R.id.adminId);
 
         db.collection("admin_sign_in")
                 .whereEqualTo("email", TemporaryDB.email)
@@ -52,7 +52,7 @@ public class EditAdmin extends AppCompatActivity {
                         adminAddress.setText(documentSnapshot2.getString("address"));
                         adminContactNum.setText(documentSnapshot2.getString("contact_num"));
                         adminPassword.setText(documentSnapshot2.getString("password"));
-                        adminId.setText(documentSnapshot2.getString("admin_sign_in_id"));
+                   //   adminId.setText(documentSnapshot2.getString("admin_sign_in_id"));
                     } else {
                         // User not found in Firestore
                         Toast.makeText(EditAdmin.this, "", Toast.LENGTH_SHORT).show();
@@ -95,7 +95,7 @@ public class EditAdmin extends AppCompatActivity {
             @Override
             public void onSuccess(Void unused) {
                 Log.d(TAG, "DocumentSnapshot added with ID: " + TemporaryDB.email);
-                Toast.makeText(EditAdmin.this, "Successfully Added"
+                Toast.makeText(EditAdmin.this, "Successfully Edited"
                         , Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(getApplication(), AdminProfileActivity.class);
                 startActivity(intent);
@@ -103,34 +103,12 @@ public class EditAdmin extends AppCompatActivity {
         }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
-                Toast.makeText(EditAdmin.this, "Error adding document" + e
+                Toast.makeText(EditAdmin.this, "Error editing document" + e
                         , Toast.LENGTH_SHORT).show();
                 Log.w(TAG, "Error adding document", e);
 
             }
         });
-/*
-        db.collection("admin_sign_in").document(TemporaryDB.email)
-                .set(signUp)
-                .addOnSuccessListener(new OnSuccessListener<Void>() {
-                    @Override
-                    public void onSuccess(Void unused) {
-                        Log.d(TAG, "DocumentSnapshot added with ID: " + TemporaryDB.email);
-                        Toast.makeText(EditAdmin.this, "Successfully Added"
-                                , Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(getApplication(), AdminProfileActivity.class);
-                        startActivity(intent);
-                    }
-                })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(EditAdmin.this, "Error adding document" + e
-                                , Toast.LENGTH_SHORT).show();
-                        Log.w(TAG, "Error adding document", e);
-                    }
-                });
-*/
 
         buttonLogout = findViewById(R.id.buttonLogout);
         buttonLogout.setOnClickListener(new View.OnClickListener() {

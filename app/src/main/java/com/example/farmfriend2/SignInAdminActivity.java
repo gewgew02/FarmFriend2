@@ -40,7 +40,7 @@ public class SignInAdminActivity extends AppCompatActivity {
         //Find the ID every Variable
         EditText adminFirstName = findViewById(R.id.adminFirstName);
         EditText adminLastName = findViewById(R.id.adminLastName);
-        EditText adminId = findViewById(R.id.adminId);
+//        EditText adminId = findViewById(R.id.adminId);
         EditText adminCategory = findViewById(R.id.adminCategory);
         EditText adminAddress = findViewById(R.id.adminAddress);
         EditText adminContactNum = findViewById(R.id.adminContactNum);
@@ -56,17 +56,16 @@ public class SignInAdminActivity extends AppCompatActivity {
                 DocumentReference docRef = db.collection("admin_sign_in").document();
                 String firstnameInput = adminFirstName.getText().toString();
                 String lastnameInput = adminLastName.getText().toString();
-                String idInput = adminId.getText().toString();
+//                String idInput = adminId.getText().toString();
                 String categoryInput = adminCategory.getText().toString();
                 String addressInput = adminAddress.getText().toString();
                 String contactNumInput = adminContactNum.getText().toString();
                 String emailInput = adminEmail.getText().toString();
                 String passInput = adminPassword.getText().toString();
 
-                if(!firstnameInput.isEmpty() && !lastnameInput.isEmpty() && !idInput.isEmpty() && !categoryInput.isEmpty() &&
+                if(!firstnameInput.isEmpty() && !lastnameInput.isEmpty() && !categoryInput.isEmpty() &&
                         !addressInput.isEmpty() && !contactNumInput.isEmpty() && !emailInput.isEmpty() && !passInput.isEmpty()){
-                    addUser(firstnameInput, lastnameInput, idInput, categoryInput,
-                            addressInput, contactNumInput, emailInput, passInput);
+                    addUser(firstnameInput, lastnameInput, categoryInput, addressInput, contactNumInput, emailInput, passInput);
                     Finish();
                 } else{
                     Toast.makeText(SignInAdminActivity.this, "All fields required!"
@@ -74,11 +73,11 @@ public class SignInAdminActivity extends AppCompatActivity {
                 }
             }
 
-            public void addUser(String firstnameInput, String lastnameInput, String idInput, String categoryInput,
+            public void addUser(String firstnameInput, String lastnameInput, String categoryInput,
                                 String addressInput, String contactNumInput, String emailInput, String passInput) {
                 // Create a new user with a first and last name
                 Map<String, Object> signUp = new HashMap<>();
-                signUp.put("admin_sign_in_id", idInput);
+//                signUp.put("admin_sign_in_id", idInput);
                 signUp.put("first_name", firstnameInput);
                 signUp.put("last_name", lastnameInput);
                 signUp.put("address", addressInput);
@@ -107,7 +106,7 @@ public class SignInAdminActivity extends AppCompatActivity {
                         });
             }
             public void Finish(){
-                Intent intent = new Intent(getApplication(), LogInActivity.class);
+                Intent intent = new Intent(getApplication(), LoginAdmin.class);
                 startActivity(intent);
                 Toast.makeText(SignInAdminActivity.this, "Successfully Added"
                         , Toast.LENGTH_SHORT).show();

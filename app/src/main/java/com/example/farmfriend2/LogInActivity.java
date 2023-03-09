@@ -4,25 +4,15 @@
 
     import android.os.Bundle;
     import android.util.Log;
-    import android.view.Window;
-    import android.view.WindowManager;
     import android.widget.Button;
     import android.content.Intent;
-    import android.text.TextUtils;
     import android.view.View;
     import android.widget.EditText;
-    import android.widget.TextView;
     import android.widget.Toast;
 
-    import com.google.android.gms.tasks.OnCompleteListener;
     import com.google.android.gms.tasks.OnFailureListener;
-    import com.google.android.gms.tasks.OnSuccessListener;
-    import com.google.firebase.firestore.CollectionReference;
     import com.google.firebase.firestore.DocumentSnapshot;
     import com.google.firebase.firestore.FirebaseFirestore;
-    import com.google.firebase.firestore.Query;
-    import com.google.firebase.firestore.QueryDocumentSnapshot;
-    import com.google.firebase.firestore.QuerySnapshot;
 
     import org.checkerframework.checker.nullness.qual.NonNull;
 
